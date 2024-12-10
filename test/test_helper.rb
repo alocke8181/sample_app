@@ -2,8 +2,7 @@ ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
 
-module ActiveSupport
-  class TestCase
+class ActiveSupport::TestCase
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
 
@@ -18,8 +17,8 @@ module ActiveSupport
     def log_in_as(user)
       session[:user_id] = user.id
     end
-  end
 end
+
 
 class ActionDispatch::IntegrationTest
   def log_in_as(user, password: 'password', remember_me: '1')
