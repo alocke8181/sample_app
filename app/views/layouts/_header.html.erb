@@ -20,11 +20,11 @@
                 <% if logged_in? %>
                     <li><%= link_to "Users", "#" %></li>
                     <li class="dropdown">
-                        <a href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuLink"
+                        <a href="#" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" id="dropdownMenuLink"
                             role="button" aria-haspopup="true" aria-expanded="false">
                             Account <b class="caret"></b>
                         </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" aria-labelledy="dropdownMenuLink">
                         <li class="dropdown-item"><%= link_to "Profile", current_user %></li>
                         <li class="dropdown-item"><%= link_to "Settings", "#" %></li>
                         <li class="divider dropdown-item"></li>
