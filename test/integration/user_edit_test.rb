@@ -20,9 +20,10 @@ class UserEditTest < ActionDispatch::IntegrationTest
     assert_template 'users/edit'
   end
 
-  test 'good edit' do
-    log_in_as(@user)
+  test 'good edit w/ friendly forwarding' do
     get edit_user_path(@user)
+    log_in_as(@user)
+    assert_redirected_to edit_user_path(@user)
     assert_template 'users/edit'
     name = 'Paul'
     email = 'new_email@test.com'
