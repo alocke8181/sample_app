@@ -44,6 +44,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test 'not remembering test' do
+    log_in_as(@user, remember_me: '1')
     log_in_as(@user, remember_me: '0')
     assert_nil cookies[:remember_token]
   end
