@@ -18,6 +18,14 @@ User.create!(
     activated_at: Time.zone.now
 )
 
+first_user = User.first
+
+5.times do |x|
+    content = "Test micropost number #{x}"
+    first_user.microposts.build(content: content)
+end
+
+
 99.times do |n|
     name = Faker::Name.name
     email = "example-#{n+1}@example.com"
