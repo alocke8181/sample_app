@@ -66,4 +66,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
+
+  test 'redirects following no login' do
+    get following_user_path(@user)
+    assert_redirected_to login_url
+  end
+
+  test 'redirects followers no login' do
+    get followers_user_path(@user)
+    assert_redirected_to login_url
+  end
 end
