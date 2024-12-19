@@ -22,6 +22,9 @@ gem "sprockets-rails"
 gem "webpacker"
 gem "faker"
 gem "will_paginate"
+gem 'active_storage_validations'
+gem 'image_processing'
+gem 'mini_magick'
 #gem "bootstrap-will_paginate"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
