@@ -4,6 +4,11 @@ first:
   created_at: <%= Time.zone.now %>
   user: bob
 
+other:
+  content: "I am a post by Paul."
+  created_at: <%= 2.hours.ago %>
+  user: paul
+
 <% 30.times do |n| %>
 micropost_<%= n %>:
   content: <%= Faker::Lorem.sentence(word_count: 5) %>
