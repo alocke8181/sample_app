@@ -15,6 +15,10 @@ class User < ApplicationRecord
         class_name: "Relationship", 
         foreign_key: 'follower_id', 
         dependent: :destroy
+
+    has_many :following,
+        through: :active_relationships,
+        source: :followed
     
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, 
@@ -76,6 +80,18 @@ class User < ApplicationRecord
 
     def feed
         Micropost.where("user_id = ?", id)
+    end
+
+    def following?(other)
+        following.include?(other)
+    end
+
+    def follow(other)
+        following << other
+    end
+
+    def unfollow(other)
+        following.delete(other)
     end
 
     private ############################
