@@ -13,6 +13,13 @@ paul:
   activated: true
   activated_at: <%= Time.zone.now %>
 
+fred:
+  name: Frederick Fazzington Bear
+  email: freddyfazbear@fnaf.com
+  password_digest: <%= User.digest('hur_hur_hurhur') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>

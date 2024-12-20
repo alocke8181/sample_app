@@ -1,0 +1,11 @@
+one:
+  follower: bob
+  followed: paul
+
+two:
+  follower: bob
+  followed: fred
+
+three:
+  follower: paul
+  followed: bob
